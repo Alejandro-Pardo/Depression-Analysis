@@ -1,0 +1,18 @@
+for day in df_hourly['day'].unique():
+    # Filter the dataframe by the day
+    df_day = df_hourly[df_hourly['day'] == day]
+    # Create a line plot to show the activity level for the day
+    plt.figure(figsize=(7, 3))
+    sns.lineplot(x='hour', y='activity', data=df_day, marker='o')
+    # Add labels and title
+    plt.xlabel('Hour')
+    plt.ylabel('Activity level')
+    plt.title('Activity level for ' + str(day) + ' for condition patient ' + str(patient_number))
+    # Show the plot
+    plt.grid()
+    plt.show()
+
+
+
+plotear la actividad en el primer dia y ultimo dia, pues son cuando se tomaron los datos del madrs test y asi ver si efectivamente, cuando baja el test la actividad sube
+y si sube el test la actividad baja
